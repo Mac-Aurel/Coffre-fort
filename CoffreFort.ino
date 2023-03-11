@@ -1,8 +1,6 @@
-////SECTION KEYPAD
 #include <Keypad.h>
 const byte ROWS = 4; // quatre lignes
 const byte COLS = 4; // quatre colonnes
-// définir les symboles sur les boutons des claviers
 char hexaKeys[ROWS][COLS] = {
   {'1', '2', '3', 'A'},
   {'4', '5', '6', 'B'},
@@ -12,27 +10,19 @@ char hexaKeys[ROWS][COLS] = {
 byte rowPins[ROWS] = {9, 8, 7, 6}; // se connecte aux broches des rangées du clavier
 byte colPins[COLS] = {5, 4, 3, 2}; // se connecte aux broches des colonnes du clavier
 
-// initialise une instance de la classe NewKeypad
 Keypad customKeypad = Keypad( makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);
-////END SECTION KEYPAD
 
-////SECTION Servo
 #include <Servo.h>
 Servo myservo;  // crée un objet servo pour contrôler un servo
 int servoPin = 13;
 int pos = 0;
-////END SECTION Servo
 
 
-////SECTION LCD
 #include <LiquidCrystal_I2C.h> // Library for LCD
 LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27, 16, 2);
-////END SECTION LCD
 
-////SECTION STEPPER MOTOR
 #include <Stepper.h>
 const int stepsPerRevolution = 200;
-////FIN SECTION STEPPER MOTOR
 
 bool estMotPasseTrouver = false;
 String motPasseConcatener = "";
